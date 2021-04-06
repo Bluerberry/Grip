@@ -9,29 +9,6 @@
         margin: auto;
         padding: 90px 0px;
     }
-
-    h1 {
-        margin: 0 0  1.25rem;
-        
-        color: #2A0C4E;
-        font-size: 2.813rem;
-    }
-
-    h2 {
-        margin: 1.875rem 0 0 ;
-
-        color: #3E2A75;
-        font-size: 1.563rem;
-    }
-
-    p {
-        margin: 0px 0px 1rem;
-        text-align: justify;
-    }
-
-    li {
-        text-align: justify;
-    }
 </style>
 
 <div>

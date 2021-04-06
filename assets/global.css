@@ -5,7 +5,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 
-	color: #58524B;
+	color: #4D4842;
 	font-size: 16 px;
 	font-family: 'Trebuchet MS', sans-serif;
 }
@@ -16,6 +16,29 @@ html, body {
 	  
 	display: flex;
 	flex-direction: column;
+}
+
+h1 {
+	margin: 0 0  1.25rem;
+	
+	color: #2A0C4E;
+	font-size: 2.813rem;
+}
+
+h2 {
+	margin: 1.875rem 0 0 ;
+
+	color: #3E2A75;
+	font-size: 1.563rem;
+}
+
+p {
+	margin: 0px 0px 1rem;
+	text-align: justify;
+}
+
+li {
+	text-align: justify;
 }
 
 a {
