@@ -23,6 +23,7 @@
 	header {
 		position: fixed;
         top: 0px;
+        z-index: 1;
 
         width: 100%;
         padding-right: 15px;
