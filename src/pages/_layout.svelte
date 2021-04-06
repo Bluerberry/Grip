@@ -131,10 +131,6 @@
         background-color: #F5EEE6;
 	}
 
-    footer a:hover {
-        opacity: 50%;
-    }
-
     /* Supertext CSS */
     .supertext {
         display: flex;
@@ -170,7 +166,11 @@
         margin: 0px;
 
         color: #A59E96;
-        text-decoration: underline;
+        text-decoration: none;
+    }
+
+    .nav_links a:hover {
+        color: #58524B;
     }
 
     .quick_search {
@@ -179,7 +179,6 @@
         margin-top: 10px;
         padding: 10px 15px;
 
-        color: black;
         font-size: 1.125rem;
         border-width: 0px;
         border-radius: 1.25rem;
@@ -204,8 +203,12 @@
     .subtext a {
         margin: 0.75rem;
 
-        color: black;
+        color: #58524B;
         text-decoration: none;
+    }
+
+    .subtext a:hover {
+        opacity: 50%;
     }
 </style>
 

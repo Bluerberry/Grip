@@ -26,13 +26,10 @@
 
     p {
         margin: 0px 0px 1rem;
-
-        opacity: 70%;
         text-align: justify;
     }
 
     li {
-        opacity: 70%;
         text-align: justify;
     }
 </style>
