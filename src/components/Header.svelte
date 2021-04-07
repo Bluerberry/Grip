@@ -1,19 +1,5 @@
 <script>
-    import { url } from '@roxi/routify';
-
-    // Switches active element to specified id
-    function set_active(id) {
-        // Unset all active elements
-        const menu_items = [...document.getElementsByClassName('active')];
-        menu_items.forEach(
-            menu_item => { menu_item.classList.remove('active'); }
-        );
-
-        // Set specified element
-        if (id != null) {
-            document.getElementById(id).classList.add('active');
-        }
-    }
+    import { url, isActive } from '@roxi/routify';
 </script>
 
 <style>
@@ -118,16 +104,16 @@
 
 <header>
     <nav>
-        <a href={$url('./')}           class="title"     id="title"      on:click={ () => set_active(null) }> Grip </a>
-        <a href={$url('./archive')}    class="menu_item" id="archive"    on:click={ () => set_active('archive') }> Archive </a>
-        <a href={$url('./community')}  class="menu_item" id="community"  on:click={ () => set_active('community') }> Community </a>
-        <a href={$url('./your-decks')} class="menu_item" id="your-decks" on:click={ () => set_active('your-decks') }> Your decks </a>
+        <a href={$url('./')}           id="title"      class="title"> Grip </a>
+        <a href={$url('./archive')}    id="archive"    class="menu_item" class:active={$isActive('./archive')}> Archive </a>
+        <a href={$url('./community')}  id="community"  class="menu_item" class:active={$isActive('./community')}> Community </a>
+        <a href={$url('./your-decks')} id="your-decks" class="menu_item" class:active={$isActive('./your-decks')}> Your decks </a>
         <div class="dropdown">
             <p> Profile </p>
             <div class="dropdown-content">
-                <a href={$url('./profile')} on:click={ () => set_active(null) }> View profile </a> <div class="divider"></div>
-                <a href={$url('./login')}   on:click={ () => set_active(null) }> Switch account </a>
-                <a href={$url('./')}        on:click={ () => set_active(null) }> Log out </a>
+                <a href={$url('./profile')}> View profile </a> <div class="divider"></div>
+                <a href={$url('./login')}> Switch account </a>
+                <a href={$url('./')}> Log out </a>
             </div>
         </div>
     </nav>

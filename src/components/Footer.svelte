@@ -2,20 +2,15 @@
     import { url } from '@roxi/routify'
 
     const copyright_year = new Date().getFullYear();
-
-    // Switches active element to specified id
-    function set_active(id) {
-        // Unset all active elements
-        const menu_items = [...document.getElementsByClassName('active')];
-        menu_items.forEach(
-            menu_item => { menu_item.classList.remove('active'); }
-        );
-
-        // Set specified element
-        if (id != null) {
-            document.getElementById(id).classList.add('active');
-        }
-    }
+    const navigation = [
+        ['Home', './'],
+        ['Profile', './profile'],
+        ['Your decks', './your-decks'],
+        ['Community', './community'],
+        ['Archive', './archive'],
+        ['Switch account', './login'],
+        ['Log out', './']
+    ]
 </script>
 
 <style>
@@ -41,24 +36,24 @@
         color: #A59E96;
     }
 
-    .nav_links {
-        float: left;
-        width: 50%;
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
 
-        margin: 0px;
-        padding: 0px;
-
-        list-style-type: none;
+        height: 50%;
     }
 
-    .nav_links a {
+    .nav-links a {
+        width: 50%;
         margin: 0px;
 
         color: #A59E96;
         text-decoration: none;
     }
 
-    .nav_links a:hover {
+    .nav-links a:hover {
         color: #58524B;
     }
 
@@ -113,29 +108,23 @@
                 or our deck sharing community, we feature it all.
             </p>
         </div>
-        <nav class="column" style="width: 20%;">
+        <div class="column" style="width: 20%;">
             <h1> Navigation </h1>
-            <ul class="nav_links">
-                <li><a href={$url('./')}           on:click={ () => set_active(null) }>         Home       </a></li>
-                <li><a href={$url('./profile')}    on:click={ () => set_active(null) }>         Profile    </a></li>
-                <li><a href={$url('./your-decks')} on:click={ () => set_active('your-decks') }> Your decks </a></li>
-                <li><a href={$url('./community')}  on:click={ () => set_active('community') }>  Community  </a></li>
-            </ul>
-            <ul class="nav_links">
-                <li><a href={$url('./archive')}    on:click={ () => set_active('archive') }> Archive        </a></li>
-                <li><a href={$url('./login')}      on:click={ () => set_active(null) }>      Switch account </a></li>
-                <li><a href={$url('./')}           on:click={ () => set_active(null) }>      Log out        </a></li>
-            </ul>                                                      
-        </nav>
+            <nav class="nav-links">
+                {#each navigation as [name, path]}
+                    <a href={$url(path)}> {name} </a>
+                {/each} 
+            </nav>                                               
+        </div>
         <div class="column" style="width: 30%;">
             <h1> Quick search </h1>
             <input type="text" class="quick_search"/>
         </div>
     </div>
     <div class="subtext">
-        <a href={$url('./privacy-policy')} on:click={ () => set_active(null) }> Privacy policy </a> <span>·</span>
-        <a href={$url('./sitemap')}        on:click={ () => set_active(null) }> Sitemap        </a> <span>·</span>
-        <a href={$url('./support')}        on:click={ () => set_active(null) }> Support        </a> <span>·</span>
+        <a href={$url('./privacy-policy')}> Privacy policy </a> <span>·</span>
+        <a href={$url('./sitemap')}> Sitemap </a> <span>·</span>
+        <a href={$url('./support')}> Support </a> <span>·</span>
         <p> © {copyright_year} Grip MTG Deckbuilder </p>
     </div>
 </footer>
