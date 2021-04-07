@@ -3,10 +3,17 @@
 </script>
 
 <style>
-	h1, p {
-		margin: 0px;
+	.centered {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
 
-		text-align: center;
+	h1, p {
+		color: black;
+		margin: 0px;
 	}
 
 	h1 {
@@ -14,7 +21,7 @@
 	}
 </style>
 
-<div>
+<div class="centered">
 	<h1> 404 </h1>
 	<p> Page not found. <a href={$url('../')}>Go back</a></p>
 </div>
