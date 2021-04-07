@@ -4,6 +4,7 @@ html, body {
 
 	margin: 0;
 	padding: 0;
+	background-color: #FFF8F0;
 
 	color: #4D4842;
 	font-size: 16 px;
@@ -16,6 +17,7 @@ html, body {
 	  
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 h1 {

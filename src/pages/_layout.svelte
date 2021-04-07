@@ -6,8 +6,9 @@
 <style>
 	.content {
         flex: 1;
+        width: 75%;
         margin-top: 5.063rem;
-		background-color: #FFF8F0;
+        padding: 90px 0px;
 	}
 </style>
 
